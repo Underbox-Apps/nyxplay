@@ -6,6 +6,6 @@ use Inertia\Inertia;
 Route::get(
     '/',
     function () {
-        return Inertia::render('Welcome', ['title' => 'Welcome',]);
+        return Inertia::render('Welcome', ['title' => 'Outros',]);
     }
 )->name('homepage');
