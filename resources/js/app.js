@@ -1,17 +1,16 @@
+// import './bootstrap';
+import '../css/app.css'; 
+
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, h } from "vue";
 import { createInertiaApp, Link, Head } from "@inertiajs/inertia-vue3";
 import { InertiaProgress } from "@inertiajs/progress";
 
-import { ZiggyVue } from "ziggy";
+import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import { Ziggy } from "./ziggy";
 
-InertiaProgress.init();
-
 createInertiaApp({
-    resolve: async(name) => {
-        return (await
-            import (`./Pages/${name}`)).default;
-    },
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
             .use(plugin)
@@ -22,3 +21,5 @@ createInertiaApp({
             .mount(el);
     },
 });
+
+InertiaProgress.init();
