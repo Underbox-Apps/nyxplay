@@ -1,7 +1,7 @@
 <template>
     <Head>
-        <title>{{ $page.props.title }} - My awesome app</title>
+        <title>Nyxflix - {{ $page.props.title }}</title>
     </Head>
 
-    Welcome
+    <div class="w-full bg-red-500">ok mais um teste?</div>
 </template>
