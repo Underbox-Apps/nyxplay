@@ -4,9 +4,10 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
     plugins: [
-        laravel([
-            'resources/js/app.js',
-        ]),
+        laravel({
+            input: 'resources/js/app.js',
+            refresh: true,
+        }),
         vue({
             template: {
                 transformAssetUrls: {
@@ -16,20 +17,4 @@ export default defineConfig({
             },
         }),
     ],
-    server: {
-        watch: {
-            usePolling: true,
-            
-        }
-    },
-    resolve: {
-        alias: {
-            '@': '/resources/js',
-            'ziggy': '/vendor/tightenco/ziggy/dist/vue'
-        }
-    },
-    optimizeDeps: {
-        include: ["ziggy"],
-    },
-
 });
