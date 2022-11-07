@@ -30,6 +30,6 @@ watch(search, (newSearch) => {
     <label class="relative text-gray-400 focus-within:text-gray-600 block w-full">
         <MagnifyingGlassIcon class="pointer-events-none w-8 h-8 absolute top-1/2 transform -translate-y-1/2 left-3" />
         <input type="email" name="email" id="email" placeholder="Buscar Titulo" v-model="search"
-            class="form-input border border-gray-900 py-3 px-4 bg-white placeholder-gray-400 text-gray-500 appearance-none w-full block pl-14 focus:outline-none rounded-full">
+            class="form-input border border-gray-900 px-4 bg-white placeholder-gray-400 text-gray-500 appearance-none w-full block pl-14 focus:outline-none focus:py-4 rounded-full">
     </label>
 </template>

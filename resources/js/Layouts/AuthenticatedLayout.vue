@@ -9,7 +9,7 @@ import SearchInput from '@/Components/SearchInput.vue';
             <div class="hidden lg:flex flex-col place-content-center">
                 <div class="flex h-3/5 w-auto">
                     <!-- logo -->
-                    <img class="flex object-cover w-auto h-full shadow rounded-full" src="assets/nyx-logo.jpg"
+                    <img class="flex object-cover w-auto h-full shadow rounded-full" src="/assets/nyx-logo.jpg"
                         alt="Nyx Tecnology">
                 </div>
             </div>
