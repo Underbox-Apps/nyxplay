@@ -1,29 +1,45 @@
 <script setup>
 import MovieContainer from '@/Components/MovieContainer.vue';
+import BackdropContainer from './BackdropContainer.vue';
 </script>
 <template>
-    <div class="flex flex-row my-4 w-full h-2/5 overflow-x-auto overflow-y-hidden nowrap pb-6">
+    <BackdropContainer>
+        <div class="flex flex-row my-4 overflow-x-auto overflow-y-hidden nowrap">
 
-        <MovieContainer class="min-w-max max-w-fit h-full " />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-maxmax-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-        <MovieContainer class="min-w-max max-w-fit h-full" />
-    </div>
-    
+            <div class="mx-2 w-2/6 md:w-3/12 lg:w-2/12">
+                <MovieContainer />
+            </div>
+            <div class="mx-2 w-2/6 md:w-3/12 lg:w-2/12">
+                <MovieContainer />
+            </div>
+            <div class="mx-2 w-2/6 md:w-3/12 lg:w-2/12">
+                <MovieContainer />
+            </div>
+            <div class="mx-2 w-2/6 md:w-3/12 lg:w-2/12">
+                <MovieContainer />
+            </div>
+            <div class="mx-2 w-2/6 md:w-3/12 lg:w-2/12">
+                <MovieContainer />
+            </div>
+            <div class="mx-2 w-2/6 md:w-3/12 lg:w-2/12">
+                <MovieContainer />
+            </div>
+            <div class="mx-2 w-2/6 md:w-3/12 lg:w-2/12">
+                <MovieContainer />
+            </div>
+            <div class="mx-2 w-2/6 md:w-3/12 lg:w-2/12">
+                <MovieContainer />
+            </div>
+            <div class="mx-2 w-2/6 md:w-3/12 lg:w-2/12">
+                <MovieContainer />
+            </div>
+            <div class="mx-2 w-2/6 md:w-3/12 lg:w-2/12">
+                <MovieContainer />
+            </div>
+            <div class="mx-2 w-2/6 md:w-3/12 lg:w-2/12">
+                <MovieContainer />
+            </div>           
+        </div>
+    </BackdropContainer>
+
 </template>
