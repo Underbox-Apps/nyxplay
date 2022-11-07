@@ -1,16 +1,29 @@
 <script setup>
-defineProps({
-    title: {
-        type: String,
-        default: '',
-    },
-});
+import MovieContainer from '@/Components/MovieContainer.vue';
 </script>
 <template>
-    <div class="flex flex-col bg-black w-full bg-opacity-40 py-4">
-        <div class="text-lg text-white text-bold">{{ title }}</div>
-        <div class="flex flex-row">
-            teste
-        </div>
+    <div class="flex flex-row my-4 w-full h-2/5 overflow-x-auto overflow-y-hidden nowrap pb-6">
+
+        <MovieContainer class="min-w-max max-w-fit h-full " />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-maxmax-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
+        <MovieContainer class="min-w-max max-w-fit h-full" />
     </div>
+    
 </template>
