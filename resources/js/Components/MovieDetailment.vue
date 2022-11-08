@@ -10,7 +10,7 @@ const treated_date = new Date(release_date.value).toLocaleDateString('en-US', {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
-  })
+})
 const stars = (5 * (popularity.value / 100)).toFixed(1);
 </script>
 <template>
