@@ -13,10 +13,10 @@ const emit = defineEmits(['change', 'update'])
 
     <Head title="Bem Vindo" />
 
-    <div class="relative flex items-center min-h-screen min-w-screen bg-scroll sm:pt-0 px-5"
+    <div class="relative flex items-center min-h-screen min-w-full bg-scroll sm:pt-0 px-5"
         style="background-image: url('assets/up-bg.jpg'); background-size: cover;">
 
-        <div class="flex flex-row min-h-screen w-screen py-5">
+        <div class="flex flex-row min-h-screen w-full py-5">
             <div class="hidden lg:flex max-w-4xl mr-auto sm:px-6 lg:px-8 lg:ml-2 lg:py-5 rounded-lg">
                 <div class="flex place-self-center mt-8 overflow-hidden sm:rounded-lg">
                     <div class="mx-5 font-bold text-white">
