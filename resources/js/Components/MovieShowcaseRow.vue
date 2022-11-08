@@ -38,8 +38,7 @@ import BackdropContainer from './BackdropContainer.vue';
             </div>
             <div class="mx-2 w-2/6 md:w-3/12 lg:w-2/12">
                 <MovieContainer />
-            </div>           
+            </div>
         </div>
     </BackdropContainer>
-
 </template>

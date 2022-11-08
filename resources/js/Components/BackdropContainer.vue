@@ -9,7 +9,7 @@ const backdrop_path = ref('url(https://image.tmdb.org/t/p/original/vViRXFnSyGJ2f
     <div class="flex flex-col h-full w-full bg-fixed backdrop-container place-content-end">
         <div class="flex flex-col w-full h-full bg-black bg-opacity-40 justify-center md:justify-between">
             <div class="place-content-start">
-                <MovieDetailment class="hidden md:flex"/>
+                <MovieDetailment class="hidden md:flex" />
             </div>
             <slot />
         </div>
