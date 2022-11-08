@@ -9,6 +9,6 @@ import { Head } from '@inertiajs/inertia-vue3';
     <Head title="Dashboard" />
 
     <AuthenticatedLayout>
-        <MovieShowcase />
+        <MovieShowcase/>
     </AuthenticatedLayout>
 </template>

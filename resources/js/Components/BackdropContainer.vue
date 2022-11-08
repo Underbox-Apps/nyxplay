@@ -7,7 +7,7 @@ const backdrop_path = ref('url(https://image.tmdb.org/t/p/original/vViRXFnSyGJ2f
 
 <template>
     <div class="flex flex-col h-full w-full bg-fixed backdrop-container place-content-end">
-        <div class="flex flex-col w-full h-full bg-black bg-opacity-40 justify-center md:justify-between">
+        <div class="flex flex-col w-full h-screen justify-center md:justify-between">
             <div class="place-content-start">
                 <MovieDetailment class="hidden md:flex" />
             </div>
@@ -28,7 +28,7 @@ const backdrop_path = ref('url(https://image.tmdb.org/t/p/original/vViRXFnSyGJ2f
     top: 0;
     left: 0;
     width: 100%;
-    height: 70%;
+    height: 100%;
     opacity: .7;
     z-index: -1;
     background-image: v-bind(backdrop_path);

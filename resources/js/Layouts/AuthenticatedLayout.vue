@@ -4,7 +4,7 @@ import SearchInput from '@/Components/SearchInput.vue';
 </script>
 
 <template>
-    <div class="flex flex-row justify-between px-5 py-2" style="background-color:rgb(26,47,48, 0.95);">
+    <div class="flex flex-row justify-between px-5 py-2 w-full bg-teal-700" style="min-height: 10vh;">
         <div class="flex flex-row w-4/5">
             <div class="hidden lg:flex flex-col place-content-center">
                 <div class="flex h-3/5 w-auto">
@@ -30,6 +30,6 @@ import SearchInput from '@/Components/SearchInput.vue';
         </div>
 
     </div>
-    <slot />
+    <slot class="pt-10"  style="min-height: 90vh;"/>
      
 </template>

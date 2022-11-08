@@ -7,8 +7,7 @@ const popularity = ref(78.707)
 const stars = (5 * (popularity.value / 100)).toFixed(1);
 </script>
 <template>
-    <div class="flex flex-row place-content-center min-h-full md:place-content-start py-4 bg-black bg-opacity-40">
-
+    <div class="flex flex-row min-h-full place-content-start py-4 bg-black bg-opacity-60">
         <div class="flex flex-col h-80 mx-4">
             <!-- 'https://image.tmdb.org/t/p/original/' + result.backdrop_path -->
             <img class="h-full w-full object-scale-down"
