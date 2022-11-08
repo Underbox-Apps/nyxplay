@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('movies_rented', function (Blueprint $table) {
-            $table->string('movie_name', 100)->nullable()->default('No Name');
+            $table->string('movie_name', 100)->nullable()->default('No Name')->after('movie_id');
         });
     }
 
