@@ -4,6 +4,13 @@ import { StarIcon } from '@heroicons/vue/24/solid'
 import { ref } from 'vue'
 
 const popularity = ref(78.707)
+const release_date = ref('2012-12-20')
+
+const treated_date = new Date(release_date.value).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  })
 const stars = (5 * (popularity.value / 100)).toFixed(1);
 </script>
 <template>
@@ -18,14 +25,26 @@ const stars = (5 * (popularity.value / 100)).toFixed(1);
                 <!-- result.original_title -->
                 <div class="text-white text-xl font-bold pb-1">Jack Reacher</div>
                 <div class="flex flex-row text-sm max-h-min text-white pb-4">
-                    <div>
-                        <p>Popularity:&nbsp;</p>
+                    <div class="flex flex-row max-h-min w-2/6">
+                        <div>
+                            <p>Release Date:&nbsp;</p>
+                        </div>
+
+                        <div>
+                            <p>{{ treated_date }}</p>
+                        </div>
                     </div>
-                    <div class="py-1">
-                        <StarIcon class="h-full text-yellow-500" />
-                    </div>
-                    <div>
-                        <p>{{ stars }}/5</p>
+
+                    <div class="flex flex-row max-h-min">
+                        <div>
+                            <p>Popularity:&nbsp;</p>
+                        </div>
+                        <div class="py-1">
+                            <StarIcon class="h-full text-yellow-500" />
+                        </div>
+                        <div>
+                            <p>{{ stars }}/5</p>
+                        </div>
                     </div>
                 </div>
                 <div class="text-gray-300 overflow-y-auto text-md text-justify">

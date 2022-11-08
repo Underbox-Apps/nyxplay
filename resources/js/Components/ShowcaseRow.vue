@@ -3,7 +3,7 @@ import MovieContainer from '@/Components/MovieContainer.vue';
 import BackdropContainer from './BackdropContainer.vue';
 import { ref } from 'vue';
 
-const search_result = ref(null)
+const search_result = ref("null")
 const OpenDetail = (id) => {
     console.log("Movie: " + id)
 }
