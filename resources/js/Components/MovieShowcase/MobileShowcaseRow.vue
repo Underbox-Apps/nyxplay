@@ -1,5 +1,5 @@
 <script setup>
-import MovieContainer from '@/Components/MovieContainer.vue';
+import MovieContainer from '@/Components/MovieShowcase/MovieContainer.vue';
 import { store } from '@/Services/store'
 
 const OpenDetail = (id) => {
@@ -7,7 +7,7 @@ const OpenDetail = (id) => {
 }
 </script>
 <template>
-    <div v-if="store.search_result.length == null" class="flex flex-col text-white text-center h-full place-content-center mx-2">
+    <div v-if="store.search_result.length == null" class="flex flex-col text-white text-center h-full place-content-center mx-2" style="min-height: 90vh;">
         <div class="text-6xl place-self-center">
             Seja bem vindo!!
         </div>

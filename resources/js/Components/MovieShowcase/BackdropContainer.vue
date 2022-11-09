@@ -1,11 +1,14 @@
 <script setup>
 import { ref } from 'vue';
-import MovieDetailment from '@/Components/MovieDetailment.vue';
+import MovieDetailment from '@/Components/MovieShowcase/MovieDetailment.vue';
 
 const backdrop_path = ref('url(https://image.tmdb.org/t/p/original/vViRXFnSyGJ2fzMbcc5sqTKswcd.jpg)')
 </script>
 
 <template>
+    <!-- Work In Production -->
+    <!-- Backdrop container to show title detailment in netflix based template. -->
+
     <div class="flex flex-col h-full w-full bg-fixed backdrop-container place-content-end">
         <div class="flex flex-col w-full h-screen justify-center md:justify-between">
             <div class="place-content-start">

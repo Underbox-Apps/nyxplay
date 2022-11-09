@@ -1,6 +1,6 @@
 <script setup>
-import MovieContainer from '@/Components/MovieContainer.vue';
-import BackdropContainer from './BackdropContainer.vue';
+import MovieContainer from '@/Components/MovieShowcase/MovieContainer.vue';
+import BackdropContainer from '@/Components/MovieShowcase/BackdropContainer.vue';
 // import { reactive, watch } from 'vue';
 import { store } from '@/Services/store'
 
@@ -10,6 +10,9 @@ const OpenDetail = (id) => {
 
 </script>
 <template>
+    <!-- Work In Production -->
+    <!-- template draft to list all movies based on netflix with infinite scrooling -->
+    
     <div v-if="store.search_result.length == null"
         class="flex flex-col text-white text-center h-screen w-full place-content-center">
         <div class="text-6xl place-self-center">

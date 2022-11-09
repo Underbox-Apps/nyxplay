@@ -7,6 +7,7 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
+        './node_modules/flowbite/**/*.js'
     ],
 
     theme: {
@@ -17,5 +18,5 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp'),],
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp'), require('flowbite/plugin')],
 };

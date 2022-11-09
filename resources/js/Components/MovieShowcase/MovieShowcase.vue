@@ -1,6 +1,6 @@
 <script setup>
-import ShowcaseRow from '@/Components/ShowcaseRow.vue';
-import MobileShowcaseRow from '@/Components/MobileShowcaseRow.vue';
+import ShowcaseRow from '@/Components/MovieShowcase/ShowcaseRow.vue';
+import MobileShowcaseRow from '@/Components/MovieShowcase/MobileShowcaseRow.vue';
 </script>
 <template>
     <div class="flex flex-col items-start min-h-screen min-w-full bg-scroll"
