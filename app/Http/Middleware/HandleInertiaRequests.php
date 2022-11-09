@@ -36,7 +36,7 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request)
     {
-        $movies = MoviesRented::all();
+        $movies = MoviesRented::where('expiration_date', '>=', now())->orderBy('created_at', 'desc')->get();
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => $request->user(),
