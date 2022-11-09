@@ -1,12 +1,19 @@
 <script setup>
 import { store } from '@/Services/store'
-import { ref, watch } from 'vue'
+import { usePage } from '@inertiajs/inertia-vue3';
+import { ref, watch, reactive } from 'vue'
+import { Inertia } from '@inertiajs/inertia';
 import { StarIcon } from '@heroicons/vue/24/solid'
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 
 const title_detailment = ref(store.selected_title_detailment)
 const treated_date = ref('')
 const stars = ref('')
+const form = reactive({
+    movie_id: null,
+    user_id: usePage().props.value.auth.user.id,
+    movie_name: null,
+})
 
 watch(
     () => store.selected_title_detailment,
@@ -18,9 +25,16 @@ watch(
         })
 
         stars.value = (newValue.vote_average / 2).toFixed(1)
+
+        form.movie_id = newValue.id,
+        form.movie_name = newValue.title
     },
     { deep: true }
 )
+
+const submit = () => {
+    Inertia.post(route('rent.store', form));
+};
 </script>
 
 <template>
@@ -50,7 +64,7 @@ watch(
                             <div class="py-0 ml-1 mb-1">
                                 <StarIcon class="h-full text-yellow-500" />
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="text-gray-300 overflow-y-auto text-md text-justify">
@@ -64,7 +78,7 @@ watch(
         </div>
         <div class="flex flex-col">
             <div class="flex flex-row place-self-end">
-                <PrimaryButton class="py-3 lg:mr-4 lg:mb-3">Alugue este filme pelos proximos 2 dias.</PrimaryButton>
+                <PrimaryButton @click="submit" class="py-3 lg:mr-4 lg:mb-3">Alugue este filme pelos proximos 2 dias.</PrimaryButton>
             </div>
         </div>
     </div>

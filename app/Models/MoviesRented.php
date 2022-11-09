@@ -15,6 +15,7 @@ class MoviesRented extends Model
         'movie_id',
         'user_id',
         'expiration_date',
+        'movie_name',
     ];
 
     protected $casts = [

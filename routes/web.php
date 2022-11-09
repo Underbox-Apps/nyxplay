@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StoreRentController;
 use Inertia\Inertia;
 
 /*
@@ -22,5 +23,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
     Route::get('/',  function () {return Inertia::render('Dashboard');})->name('home');
 });
+
+Route::post('/rent', StoreRentController::class)->name('rent.store');
 
 require __DIR__.'/auth.php';
