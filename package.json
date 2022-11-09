@@ -27,6 +27,7 @@
         "@inertiajs/progress": "^0.2.7",
         "@tailwindcss/line-clamp": "^0.4.2",
         "npm": "^8.19.3",
-        "vue": "^3.2.41"
+        "vue": "^3.2.41",
+        "vue-sweetalert2": "^5.0.5"
     }
 }

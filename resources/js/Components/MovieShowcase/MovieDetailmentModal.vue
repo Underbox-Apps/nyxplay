@@ -4,7 +4,9 @@ import { usePage } from '@inertiajs/inertia-vue3';
 import { ref, watch, reactive } from 'vue'
 import { StarIcon } from '@heroicons/vue/24/solid'
 import PrimaryButton from '@/Components/PrimaryButton.vue';
+import { inject } from 'vue'
 
+const swal = inject('$swal')
 const title_detailment = ref(store.selected_title_detailment)
 const treated_date = ref('')
 const stars = ref('')
@@ -34,7 +36,19 @@ watch(
 const submit = async () => {
     axios.post(route('rent.store', form)).then(
         (response) => {
-            console.log(response.data)
+            if (!response.data.error) {
+                swal.fire({
+                    icon: 'success',
+                    title: response.data.message,
+                    showConfirmButton: true,
+                });
+            } else {
+                swal.fire({
+                    icon: 'error',
+                    title: response.data.message,
+                    showConfirmButton: true,
+                });
+            }
         }
     );
 };
@@ -44,8 +58,11 @@ const submit = async () => {
     <div class="flex flex-col place-content-start bg-black bg-opacity-60">
         <div class="flex flex-row place-content-start py-4 px-3 ">
             <div class="flex h-full w-2/6">
-                <img class="h-full w-full object-scale-down" style="max-height: 60vh"
+                <img v-if="title_detailment.poster_path != null" class="h-full w-full object-scale-down"
+                    style="max-height: 60vh"
                     :src="'https://image.tmdb.org/t/p/original/' + title_detailment.poster_path">
+                <img v-else src="/assets/poster-not-found.jpg" alt="Poster não encontrado"
+                    class="h-full w-full object-scale-down" style="max-height: 60vh" />
             </div>
             <div class="flex flex-col px-4 min-h-full w-4/6 place-content-between">
                 <div class="flex flex-col">
