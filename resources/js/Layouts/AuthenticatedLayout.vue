@@ -1,6 +1,10 @@
 <script setup>
 import { Link } from '@inertiajs/inertia-vue3';
 import SearchInput from '@/Components/SearchInput.vue';
+import { usePage } from '@inertiajs/inertia-vue3';
+import { computed } from 'vue';
+
+const user = computed(() => usePage().props.value.auth.user);
 </script>
 
 <template>
@@ -17,7 +21,7 @@ import SearchInput from '@/Components/SearchInput.vue';
             <!-- Busca -->
             <div class="flex flex-col place-content-center lg:mx-5 w-full">
                 <div class="flex flex-row justify-between">
-                    <SearchInput />
+                    <SearchInput v-if="user.is_admin == 0"/>
                 </div>
             </div>
         </div>

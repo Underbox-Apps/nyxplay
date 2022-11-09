@@ -5,6 +5,8 @@ namespace App\Http\Middleware;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
+use App\Http\Resources\MoviesRentedCollection;
+use App\Models\MoviesRented;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -34,9 +36,11 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request)
     {
+        $movies = MoviesRented::all();
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => $request->user(),
+                'rented_movies' => MoviesRentedCollection::collection($movies)->toJson(),
             ],
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [
