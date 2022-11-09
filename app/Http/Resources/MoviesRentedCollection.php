@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class MoviesRentedCollection extends ResourceCollection
+class MoviesRentedCollection extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
@@ -22,7 +22,7 @@ class MoviesRentedCollection extends ResourceCollection
                 "user_id" => $this->user_id,
                 "created_at" => $this->created_at,
                 "expiration_date" => $this->expiration_date,
-                "user" => new UserResource($this->user_id),
+                "user" => new UserResource($this->lodger_user),
             ];
         } catch (\Exception $e) {
             return response()->json([
