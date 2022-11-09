@@ -2,7 +2,6 @@
 import { store } from '@/Services/store'
 import { usePage } from '@inertiajs/inertia-vue3';
 import { ref, watch, reactive } from 'vue'
-import { Inertia } from '@inertiajs/inertia';
 import { StarIcon } from '@heroicons/vue/24/solid'
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 
@@ -27,13 +26,17 @@ watch(
         stars.value = (newValue.vote_average / 2).toFixed(1)
 
         form.movie_id = newValue.id,
-        form.movie_name = newValue.title
+            form.movie_name = newValue.title
     },
     { deep: true }
 )
 
-const submit = () => {
-    Inertia.post(route('rent.store', form));
+const submit = async () => {
+    axios.post(route('rent.store', form)).then(
+        (response) => {
+            console.log(response.data)
+        }
+    );
 };
 </script>
 
@@ -78,7 +81,8 @@ const submit = () => {
         </div>
         <div class="flex flex-col">
             <div class="flex flex-row place-self-end">
-                <PrimaryButton @click="submit" class="py-3 lg:mr-4 lg:mb-3">Alugue este filme pelos proximos 2 dias.</PrimaryButton>
+                <PrimaryButton @click="submit" class="py-3 lg:mr-4 lg:mb-3">Alugue este filme pelos proximos 2 dias.
+                </PrimaryButton>
             </div>
         </div>
     </div>

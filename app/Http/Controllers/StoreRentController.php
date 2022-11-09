@@ -31,19 +31,19 @@ class StoreRentController extends Controller
             ]);
             DB::commit();
 
-            $return = response()->json([
+            return response()->json([
                 'error' => false,
                 'message' => "O aluguel do titulo foi concluido com sucesso",
             ], 200);
-            return Inertia::render('Dashboard');
+            // return Inertia::render('Dashboard');
         } catch (\Exception $e) {
             DB::rollBack();
-            $return = response()->json([
+            return response()->json([
                 'error' => true,
                 'message' => "Não foi possivel cadastrar a alugar este titulo. Por favor entre em contato com o administrador do sistema.",
                 "serve_error_message" => $e->getMessage()
             ], 402);
-            return Inertia::render('Dashboard');
+            // return Inertia::render('Dashboard');
         }
         
     }
