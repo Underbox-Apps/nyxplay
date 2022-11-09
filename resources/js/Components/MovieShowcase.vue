@@ -5,12 +5,12 @@ import MobileShowcaseRow from '@/Components/MobileShowcaseRow.vue';
 <template>
     <div class="flex flex-col items-start min-h-screen min-w-full bg-scroll"
         style="background-image: url('/assets/cinesala.webp'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-        <div
+        <!-- <div
             class="hidden lg:flex flex-col place-content-end items-start w-full bg-scroll sm:pt-0 bg-black bg-opacity-80">
             <ShowcaseRow />
-        </div>
+        </div> -->
 
-        <div class="bg-black h-screen w-full bg-opacity-80 lg:hidden">
+        <div class="bg-black min-h-screen w-full bg-opacity-80">
             <div class="flex flex-col place-content-start h-full w-full ">
                 <MobileShowcaseRow />
             </div>
