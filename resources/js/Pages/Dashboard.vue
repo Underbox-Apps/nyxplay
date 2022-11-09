@@ -1,6 +1,6 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import MovieShowcase from '@/Components/MovieShowcase.vue';
+import MovieShowcase from '@/Components/MovieShowcase/MovieShowcase.vue';
 import AdminDashboard from '@/Pages/AdminDashboard.vue';
 import { Head } from '@inertiajs/inertia-vue3';
 import { computed } from 'vue';

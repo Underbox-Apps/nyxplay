@@ -1,15 +1,18 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
+import api from '@/Services/api';
+import { store } from '@/Services/store'
+import { usePage } from '@inertiajs/inertia-vue3'
 
 const search = ref(null)
 const busy = ref(false)
 
-const searchMovie = () => {
+const searchMovie = async () => {
     busy.value = true
-    setTimeout(() => {
-        // Este console será substuido pelo serviço de requisição da API
-        console.log(search.value)
+    setTimeout(async () => {
+        const response = await api.searchTitle(search.value, usePage().props.value.apiKey)
+        store.search_result = response.results
         busy.value = false
     }, '3000')
 }
