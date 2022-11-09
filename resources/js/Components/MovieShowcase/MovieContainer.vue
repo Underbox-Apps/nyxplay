@@ -1,15 +1,12 @@
 <script setup>
-import { ref } from 'vue'
+import { store } from '@/Services/store'
+import api from '@/Services/api';
+import { usePage } from '@inertiajs/inertia-vue3'
 
 const props = defineProps(['movie'])
-const is_focused = ref(false)
-
-//  result.id
-const id = ref(75780)
-
-const emit = defineEmits(['selectedMovie'])
-const ToogleFocus = () => {
-    emit('selectedMovie', id.value)
+const ToogleFocus = async () => {
+    const response = await api.getTitleDetails(props.movie.id, usePage().props.value.apiKey)
+    store.selected_title_detailment = response
 }
 </script>
 <template>

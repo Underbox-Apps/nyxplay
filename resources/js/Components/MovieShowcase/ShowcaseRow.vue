@@ -1,13 +1,6 @@
 <script setup>
 import MovieContainer from '@/Components/MovieShowcase/MovieContainer.vue';
 import BackdropContainer from '@/Components/MovieShowcase/BackdropContainer.vue';
-// import { reactive, watch } from 'vue';
-import { store } from '@/Services/store'
-
-const OpenDetail = (id) => {
-    console.log(store.search_result)
-}
-
 </script>
 <template>
     <!-- Work In Production -->
@@ -27,7 +20,7 @@ const OpenDetail = (id) => {
             class="flex flex-row mb-4 h-full w-full overflow-x-scroll snap-x overflow-y-hidden scroll-smooth nowrap pb-5 -mt-10">
 
             <div v-for="movie in store.search_result" class="snap-center mx-1" style="min-width: 10vw;">
-                <MovieContainer :movie="movie" @selected-movie="(id) => OpenDetail(id)" />
+                <MovieContainer :movie="movie" />
             </div>
 
 
