@@ -15,12 +15,13 @@ const closeModal = () => {
 <template>
     <!-- Modal toggle -->
     <div @click="ToogleVisibility()">
-        <slot name="button"/>
+        <slot name="button" />
     </div>
 
     <!-- Main modal -->
-    <div class="flex place-content-center fixed w-full h-full top-0 left-0 bg-gray-500/50" v-show="visible">
-        <div class="flex flex-col place-self-center bg-teal-700 w-4/5 md:w-1/2 lg:w-3/6 min-h-min rounded-lg">
+    <div class="flex place-content-center fixed w-full top-0 left-0 bg-gray-500/50" v-show="visible"
+        style="height:100vh;">
+        <div class="flex flex-col place-self-center bg-teal-700 max-h-full modal-component rounded-lg">
             <div class="w-full flex flex-row place-content-end">
                 <button class="close-button" @click="closeModal()">
                     <div
@@ -30,7 +31,32 @@ const closeModal = () => {
                 </button>
             </div>
             <!-- Modal Body -->
-            <slot name="body"/>
+            <slot name="body" />
         </div>
     </div>
 </template>
+
+<style>
+.modal-component {
+    max-height: 85vh;
+    width: 100vw;
+}
+
+@media (min-width: 768px) {
+    .modal-component {
+        width: 80vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .modal-component {
+        width: 60vw;
+    }
+}
+
+@media (min-width: 1280px) {
+    .modal-component {
+        width: 50vw;
+    }
+}
+</style>
