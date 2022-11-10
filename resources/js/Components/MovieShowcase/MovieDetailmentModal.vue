@@ -104,3 +104,11 @@ const submit = async () => {
         </div>
     </div>
 </template>
+
+<style>
+.swal2-styled.swal2-confirm {
+    background-color: rgb(6,47,44);
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+</style>
