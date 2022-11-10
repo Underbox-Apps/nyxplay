@@ -2,50 +2,56 @@
 
 
 ### 📝Sobre:
-Este projeto foi desenvolvido com o intuito de pleitear uma vaga na empresa Nyx Technology, seu fluxo propõe o desenvolvimento de um sistema que permita que o usuário possa locar filmes e series por um periodo fixo de 48 horas selecionado o titulo desejado de uma lista filtrada atraves de uma busca do mesmo. Alem da área do cliente o sistema propõe uma area do administrador onde este possa acompanhar os titulos alugados assim como dados sobre o aluguel deste como data de quando foi alugado e tempo para a expiração das 48 horas.
-Confome proposto a listagem de titulos é consumida da API https://www.themoviedb.org/documentation/api?language=pt-BR não sendo assim necessaria nenhuma funcionalidade de gerênciamento destes.
+Este projeto foi desenvolvido com o intuito de pleitear uma vaga na empresa Nyx Technology. Seu fluxo propõe o desenvolvimento de um sistema que permita que o usuário possa locar filmes e séries por um período fixo de 48 horas selecionando o título desejado de uma lista filtrada através de uma busca do mesmo. Além da área do cliente, o sistema propõe uma área de administrador onde o mesmo possa acompanhar os títulos alugados, os dados sobre o aluguel, a data de quando foi alugado e o tempo para a expiração das 48 horas.
+Confome proposto, a listagem de titulos é consumida da API https://www.themoviedb.org/documentation/api?language=pt-BR não sendo assim necessaria nenhuma funcionalidade de gerenciamento.
 
-### 💻 Tecnologias Ultilizadas:
-Conforme solicitado o sistema ultiliza um framework PHP para seu desenvolvimente, (neste caso o Laravel), para componentizaro o frontend foi ultilizado o Vue3 que com o auxilio do Inertia js e da biblioteca ziggy pode ser ultilizado sem a necessidade de uma biblioteca de rotas usando as proprias rotas do laravel, por fim, para finalizar o frontend o Tailwind CSS com o auxilio do Laravel Mix para facilitar a aplicação de responsidade do mesmo assim como acelerar seu desenvolvimento. 
-Para facilitar o desenvolvimento e padronização do versionamento das bibliotecas ultilizadas foi ultilizado o Laravel Sail enquanto para os testes se ultilizou o Laravel Dusk.
+### 💻 Tecnologias Utilizadas:
+Conforme solicitado, o sistema utiliza um framework PHP para seu desenvolvimento. Foi escolhido o Laravel. Para componentizar o frontend, foi utilizado o Vue.js 3 que, com o auxílio do Inertia.js e da biblioteca ziggy, pode ser ultilizado sem a necessidade de uma biblioteca de rotas, usando as proprias rotas do laravel. Por fim, para finalizar o frontend, foi utilizado o framework Tailwind CSS, com o auxílio do Laravel Mix, para facilitar a aplicação de responsividade e acelerar o desenvolvimento. 
+Para gerenciar o desenvolvimento e padronizar o versionamento das bibliotecas utilizadas foi escolhido o Laravel Sail, usando também o Laravel Dusk para testar a aplicação.
 
 ### 🔧 Preparando o sistema para teste:
-Após baixar o repositorio a primeira coisa que você terá de fazer é instalar suas dependencias, por conveniencia disponibilizei um arquivo deploy.sh que se encarregará de toda a burocracia inicial, para rodar este arquivo você precisará apenas ter uma maquina Unix com uma versão do Docker e o php 8.1 ou superior instalado. Com a maquina em mãos e já dentro da pasta na qual você clonou nosso projeto você executará os seguintes comandos:
+Após baixar o repositório, deve-se instalar suas dependencias. Por conveniência, foi disponibilizado um arquivo ```deploy.sh``` que se encarregará de executar os scripts de instalação. Para conseguir executar este arquivo, é necessário ter uma maquina Unix com Docker e PHP 8.1 ou superior instalado. Depois da configuração inicial, acesse a pasta do projeto clonado e execute os comandos:
 
-``` 
-  #Primeiro rodaremos este comando para iniciar seu Docker
-  sudo service docker start
+ 
+  #### Inicie o Docker
+  ```sudo service docker start```
 
-  #Em seguida criaremos um alias para seu sail(isto será usado no futuro)
-  alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+  #### Crie um alias para o Laravel Sail
+  ```alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'```
 
-  #Executaremos o arquivo de deploy
-  . deploy.sh
+  #### Execute o arquivo de deploy
+  ```. deploy.sh```
 
-  #E por fim subiremos o servidor de teste
-  sail up -d
-```
+  #### Inicie o servidor
+  ```sail up -d```
 
-Pronto após rodar o arquivo de deploy o sistema está pronto para ser testado, para facilitar seu teste no deploy já criamos 2 usuário sendo um admin e um usuário padrão, abaixo seguem suas credenciais:
 
-<b>Usuário Admin</b>
+Após a execução dos comandos, o sistema está pronto para ser testado. No arquivo de deploy, existe uma seeder que popula o banco de dados com dois usuários:
+
+**Usuário Admin**
 email: root@gmail.com
 senha: admin
 
-<b>Usuário Cliente</b>
+**Usuário Cliente**
 email: user@gmail.com
 senha: qwerty7890
 
-Perceba que mais usuários podem ser criados livremente mas todos estes serão cliente.
+Outros usuários *Cliente* podem ser criados livremente.
+
+### ❔ Como usar
+O sistema foi desenvolvido de forma bem simples, para ultilizar-lo como cliente basta logar neste com um usuário que você criou ou com usuário cliente de teste, com isto feito so é preciso digitar no campo de busca que fica no topo da tela, em cerca de 3 segundos após o inicio da digitação o sistema fará a busca por filmes na API da TMDB e retornará os posters destes para que o usuário selecione um filme para alugar.
+Ápos a busca trazer todas as imagens basta clicar no poster que você deseja e o sitema abrirá um modal mostrando os detalhes do filme, caso este seja realmente o filme que você deseja basta clicar no botão na parte de baixo do modal que diz *Alugue este filme pelos proximos 2 dias* e o sistema por si só fará todo o resto.
+
+Ja na parte do admin você só precisa logar com o usuário admin que é criado no deploy. 
 
 ### ❌ Problemas conhecidos:
-Durante o desenvolvimento deste projeto alguns errors foram encontrados, seja erros de bibliotecas ou bugs no próprio sistema que não foram resolvidos por falta de tempo ou por dificuldade de encontrar-los. 
-Abaixo esses erros seram listados assim como sempre que possivel sua causa e formas de contornar-lo.
+Alguns erros foram encontrados e persistem no sistema, devido ao prazo de entrega. Haverão correções futuras para solucioná-los.
+Segue uma lista de erros, suas possíveis causas e soluções paleativas: 
 
-- <b>Erro de execução do Vite no Docker: <b> Para o desenvolvimento do frontend resolvi usar Vue.js, porem, tentei fazer-lo dentro do Laravel e para tal precisei usar o Vite, (até tentei o laravel mix mas o mesmo apresentou problemas de compatibilidade quando usado em conjunto com o Inertia e o Vue 3). Em produção o Vite funciona perfeitamente mas um problema serio ocorre quando se tenta subir o frontend no modo desenvolvimento a partir de um container Docker, nesta situação todas as importações de arquivos .js ficam quabradas e é impossivel se acessar a pagina que se está desenvolvendo.
-<b>Solução: </b>Para solucionar esse problema o proprio Vite cria um arquivo na raiz da pasta public do Laravel de nome "hot" sem as aspas e sem extensão todas as vezes que você rodar o comando npm run dev. Dentro do arquivo hot você encontrara escrito http://0.0.0.0:5173 basta trocar o 0.0.0.0 por localhost salvar o arquivo e recarregar a pagina.
+* **Erro de execução do Vite no Docker**: 
+O framework Vue.js foi escolhido para o desenvolvimento do frontend e para fazê-lo funcionar com o Laravel foi necessário utilizar o Vite. O Laravel Mix foi testado e apresentou problemas de compatibilidade quando usado em conjunto com o Inertia.js e o Vue.js 3. Em produção, o Vite funciona adequadamente mas um sério problema ocorre quando se tenta subir o servidor frontend no modo de desenvolvimento a partir de um container Docker. Nesta situação, todas as importações de arquivos ```.js``` param de funcionar e é impossível acessar a pagina que está sendo desenvolvida.
+***Solução:*** o Vite cria um arquivo na raiz da pasta public do Laravel nomeado apenas como ```hot``` todas as vezes que você rodar o comando ```npm run dev```. Dentro do arquivo hot, está escrito ```http://0.0.0.0:5173```. Para solucionar o problema, basta trocar o ```0.0.0.0``` por ```localhost```, salvar o arquivo e recarregar a página.
 
-- <b>Possibilidade de trocar para a pagina de login mesmo já estando logado: <b> A pagina de welcome deve ser inacessivel para usuários logados, porem, só notei essa brecha no final do desenvolvimento e assim não tive tempo de resolver-la.
+* **Página de login acessível mesmo quando o usuário está logado:** A página de login deve ser inacessível para usuários logados. Essa brecha não foi notada a tempo e será corrigida em alterações futuras.
 
-- <b>Inexistencia de paginação seja na área do cliente ou na tabela do admin: <b>Percebo que o sistema seria bem melhor se possuise uma paginação na área de listagem de filmes buscados e na tabela de filmes alugados, porem as paginações eram um requisito opicional e acabei não conseguindo desenvolver-la a tempo.
-
+* **Ausência de paginação:** O sistema estaria devidamente otimizado se houvesse paginação em áreas de cliente, quando se buscar um filme, e administrador, na tabela de filmes alugados. A paginação foi ignorada devido ao tempo de entrega e por ser opcional. Será implementada em alterações futuras. 
