@@ -18,7 +18,7 @@ const PrepareDate = (date) => {
             <div class="overflow-x-hidden">
                 <div class="py-2 inline-block w-full sm:px-6 lg:px-8">
                     <div class="overflow-hidden flex flex-row place-content-center">
-                        <div class="border-4 border-teal-700 rounded-lg w-full lg:w-3/5 overflow-hidden">
+                        <div class="border-4 border-teal-700 rounded-lg max-w-screen lg:w-5/6 overflow-hidden">
                             <table class="min-w-full table-auto">
                                 <thead class="bg-teal-500 text-gray-800">
                                     <tr>
@@ -39,7 +39,7 @@ const PrepareDate = (date) => {
                                         </td>
 
                                         <td class="hidden md:table-cell whitespace-nowrap font-medium text-gray-900 pl-4 text-center">
-                                            {{ rent.movie_name }}
+                                            <p>{{ rent.movie_name }}</p>
                                         </td>
 
                                         <td class="hidden md:table-cell whitespace-nowrap text-gray-900 pl-4 text-center">
@@ -57,9 +57,9 @@ const PrepareDate = (date) => {
                                         </td>
 
                                         <td
-                                            class="lg:hidden table-cell whitespace-nowrap text-gray-900 pr-4 left-center">
+                                            class="lg:hidden table-cell whitespace-nowrap text-gray-900 pr-4 left-center max-w-full">
                                             <div class="flex flex-col">
-                                                <div class="inline md:hidden"> <b>Movie name: </b>{{ rent.movie_name }}</div>
+                                                <div class="inline md:hidden w-5/6 md:w-12/12 truncate "> <b>Movie name: </b>{{ rent.movie_name }}</div>
                                                 <div class="inline md:hidden"> <b>Customer: </b>{{ rent.user.name }}</div>
                                                 <div> <b>Rented in: </b>{{ PrepareDate(rent.created_at) }}</div>
                                                 <div> <b>Devolution in: </b> {{ PrepareDate(rent.expiration_date) }}
