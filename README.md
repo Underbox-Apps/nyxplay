@@ -39,7 +39,7 @@ senha: qwerty7890
 Outros usuários *Cliente* podem ser criados livremente.
 
 ### ❔ Como usar
-O sistema foi desenvolvido de forma bem simples, para ultilizar-lo como cliente basta logar neste com um usuário que você criou ou com usuário cliente de teste, com isto feito so é preciso digitar no campo de busca que fica no topo da tela, em cerca de 3 segundos após o inicio da digitação o sistema fará a busca por filmes na API da TMDB e retornará os posters destes para que o usuário selecione um filme para alugar.
+O sistema foi desenvolvido de forma bem simples, para ultilizar-lo como cliente basta digitar **http://localhost/** na barra de enreços do seu navegador logar neste com um usuário que você criou ou com usuário cliente de teste, com isto feito so é preciso digitar no campo de busca que fica no topo da tela, em cerca de 3 segundos após o inicio da digitação o sistema fará a busca por filmes na API da TMDB e retornará os posters destes para que o usuário selecione um filme para alugar.
 Ápos a busca trazer todas as imagens basta clicar no poster que você deseja e o sitema abrirá um modal mostrando os detalhes do filme, caso este seja realmente o filme que você deseja basta clicar no botão na parte de baixo do modal que diz *Alugue este filme pelos proximos 2 dias* e o sistema por si só fará todo o resto.
 
 Ja na parte do admin você só precisa logar com o usuário admin que é criado no deploy. 
